@@ -93,15 +93,16 @@ function submitForm() {
   const date = document.getElementById('date').value || 'Не обрана';
   const message = document.getElementById('message').value.trim() || '—';
 
-  const text = 'Тип звернення: ' + type + '\n' +
+  const text = 'Вітаю! Хочу записатися на консультацію.\n\n' +
+    'Тип звернення: ' + type + '\n' +
     'Ім’я: ' + name + '\n' +
     'Телефон: ' + phone + '\n' +
     'Послуга: ' + service + '\n' +
     'Бажана дата: ' + date + '\n' +
     'Опис: ' + message;
-  const subject = encodeURIComponent('Заявка на консультацію — ' + name);
-  const body = encodeURIComponent(text);
-  window.location.href = `mailto:inna-berezhnaya@ukr.net?subject=${subject}&body=${body}`;
+  const whatsappUrl = `https://wa.me/380964804765?text=${encodeURIComponent(text)}`;
+  document.getElementById('whatsappFallback').href = whatsappUrl;
+  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   document.getElementById('formSuccess').classList.add('show');
 }
 

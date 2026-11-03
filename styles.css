@@ -1773,6 +1773,17 @@ select option {
   background: #eeeee7;
 }
 
+.reviews-rating {
+  margin: 18px auto 0;
+  color: #77847a;
+  font-size: 14px;
+}
+
+.reviews-rating a {
+  color: #9c7d43;
+  text-underline-offset: 3px;
+}
+
 .reviews-track {
   margin-top: 36px;
 }
